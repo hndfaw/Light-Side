@@ -1,17 +1,17 @@
 ## Light-Side DTR
 
-** Learning Goals
+**Learning Goals
 
 - Testing
 - React Router
 - Fetch/Nested Fetch
 - Animations 
 
-** Initial Questions 
+**Initial Questions 
 
 - Favorite view (?)
 
-** Schedule
+**Schedule
 
 - Work at school/after school Mon, Tues, Wed of week one 
 - Work together at school Saturday 
@@ -23,12 +23,12 @@
 - Tuesday - finishing README, etc.
 
 
-** Communication
+**Communication
 - Short retro each day
 - PR comments and code reviews
 -Slack and text 
 
 
-** Working style
+**Working style
 -Pairing on new topicw
 -Delegate and divide on things we feel more comfortable with
