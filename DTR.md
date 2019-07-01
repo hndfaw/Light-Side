@@ -7,28 +7,30 @@
 - Fetch/Nested Fetch
 - Animations 
 
-**Initial Questions 
+**Initial Questions**
 
 - Favorite view (?)
 
-**Schedule
+**Schedule**
 
 - Work at school/after school Mon, Tues, Wed of week one 
 - Work together at school Saturday 
 
-**Timeline
+**Timeline**
 
 - By Friday - Iteration 1 & 2 and testing for finished Components
 - By Monday - Through Iteration 4
 - Tuesday - finishing README, etc.
 
 
-**Communication
+**Communication**
+
 - Short retro each day
 - PR comments and code reviews
 -Slack and text 
 
 
-**Working style
+**Working style**
+
 -Pairing on new topicw
 -Delegate and divide on things we feel more comfortable with
