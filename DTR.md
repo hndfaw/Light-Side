@@ -1,6 +1,6 @@
 ## Light-Side DTR
 
-**Learning Goals
+**Learning Goals**
 
 - Testing
 - React Router
