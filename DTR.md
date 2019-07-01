@@ -22,15 +22,14 @@
 - By Monday - Through Iteration 4
 - Tuesday - finishing README, etc.
 
-
 **Communication**
 
 - Short retro each day
 - PR comments and code reviews
--Slack and text 
+- Slack and text 
 
 
 **Working style**
 
--Pairing on new topicw
--Delegate and divide on things we feel more comfortable with
+- Pairing on new topicw
+- Delegate and divide on things we feel more comfortable with
