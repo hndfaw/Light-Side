@@ -1,6 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  text-align: center;
+  background-color: #3e3e3e;
+  border: 10px solid #fff;
+  display: flex;
   height: 100vh;
+  justify-content: space-around;
+  text-align: center;
+  width: 100vw;
+  align-items: center;
 }
 
 

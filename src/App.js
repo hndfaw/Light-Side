@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Aside from './components/Aside/Aside.js'
-import data from './TestData'
+import Aside from './components/Aside/Aside.js';
+import PeopleCardContainer from './components/PeopleCardContainer/PeopleCardContainer.js'
+import Nav from "./components/Nav/Nav.js";
+import data from './TestData';
 
 class App extends Component {
   constructor(){
@@ -27,9 +29,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>APP COMPONENT</h1>
         {this.state.films.length && <Aside films={this.state.films} />}
         {!this.state.films.length && <p>Loading....</p> }
+        {this.state.people.length && <PeopleCardContainer people={this.state.people} />}
+        <Nav />
       </div>
     );
   }
