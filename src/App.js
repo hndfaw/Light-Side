@@ -11,13 +11,18 @@ class App extends Component {
     this.state = {
       films: [],
       people: [],
+      planets: [],
+      vehicles: [],
       error: ''
     }
   }
   
   componentDidMount() {
-    this.setState({ films : data.films.results })
+    this.setState({ films : data.films.results})
     this.setState({ people : data.people.results })
+    this.setState({ planets : data.planets.results })
+    this.setState({ vehicles : data.vehicles.results })
+
     // const filmsURL = 'https://swapi.co/api/films/'
     // fetch(filmsURL)
     //   .then(response => response.json())
@@ -31,6 +36,7 @@ class App extends Component {
       <div className="App">
         {this.state.films.length && <Aside films={this.state.films} />}
         {!this.state.films.length && <p>Loading....</p> }
+        {!this.state.people.length && <p>Loading....</p> }
         {this.state.people.length && <PeopleCardContainer people={this.state.people} />}
         <Nav />
       </div>
