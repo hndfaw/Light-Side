@@ -1,19 +1,18 @@
 import React from 'react';
-import './Card.css';
 
-const Card = ({ person }) => {
+
+const VehicleCard = ({ vehicle }) => {
   return (
     <section className="card">
       <h2 className="card-header">{person.name}</h2>
       <div className="card-body">
-      <p>Birth Year: {person.birth_year}</p>
-      <p>Gender: {person.gender}</p>
-      <p>Height: {person.height}</p>
-      <p>Eye Color: {person.eye_color}</p>
+        <p>Model: {vehicle.model}</p>
+        <p>Class: {vehicle.vehicle_class}</p>
+        <p>Number of Passengers: {vehicle.passengers}</p>
       </div>
       <footer className="card-footer"></footer>
     </section>
   )
 }
 
-export default Card;
+export default VehicleCard;

@@ -11,7 +11,7 @@ const randomFilm = films[0];
     <section className="body">
         <div className="crawl">
            <p>{randomFilm.opening_crawl}</p>
-           <h4>{randomFilm.title}</h4>
+           <h4 className="film-title">{randomFilm.title}</h4>
           <h4>{randomFilm.release_date}</h4>
         </div>
     </section>
