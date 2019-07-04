@@ -2,6 +2,7 @@ import React from 'react';
 import './Card.css';
 
 const Card = ({ item }) => {
+  console.log(item.type)
   return (
     <section className="card">
       <h2 className="card-header">{item.name}</h2>

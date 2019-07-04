@@ -20,10 +20,31 @@ class App extends Component {
   }
   
   componentDidMount() {
-    this.setState({ films : data.films.results})
-    this.setState({ people : data.people.results })
-    this.setState({ planets : data.planets.results })
-    this.setState({ vehicles : data.vehicles.results })
+    const films =  data.films.results.map((film, i) => {
+      film.type = 'film';
+      film.id = i;
+      return film;
+    })
+    const people =  data.people.results.map((person, i) => {
+      person.type = 'people';
+      person.id = i;
+      return person;
+    })
+
+    const planets =  data.planets.results.map((planet, i) => {
+      planet.type = 'panets';
+      planet.id = i;
+      return planet;
+    })
+
+    const vehicles =  data.vehicles.results.map((vehicle, i) => {
+      vehicle.type = 'vehicles';
+      vehicle.id = i;
+      return vehicle;
+    })
+
+    this.setState({ films, people, planets, vehicles })
+
 
     // const filmsURL = 'https://swapi.co/api/films/'
     // fetch(filmsURL)
@@ -34,7 +55,7 @@ class App extends Component {
   }
   
   render() {
-    console.log(this.state.films)
+    // console.log(this.state.films)
     return (
       <div className="App">
         {this.state.films.length && <Aside films={this.state.films} />}

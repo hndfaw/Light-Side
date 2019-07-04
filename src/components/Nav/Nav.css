@@ -31,11 +31,15 @@
   color: #ffff2b;
   font-size: 14px;
   outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-.nav-btn:hover {
+/* .nav-btn:hover {
   background: #ffff2b13;
-}
+} */
 
 .nav-fav-btn {
   border: 1px solid #FF7600;
@@ -50,9 +54,9 @@
   cursor: pointer;
 }
 
-.nav-fav-btn:hover {
+/* .nav-fav-btn:hover {
   background: rgba(255, 119, 0, 0.15);
-}
+} */
 
 .fav-count {
   border: 1px solid #FF7600;
@@ -70,5 +74,11 @@
 }
 
 .active {
-  background-color: #000;
+  background-color: #ffff2b;
+  color: #3e3e3e;
+}
+
+.fav-active {
+  background: #FF7600;
+  color: 3e3e3e;
 }
