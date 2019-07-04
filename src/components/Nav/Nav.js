@@ -10,7 +10,7 @@ const Nav = () => {
         <div className="buttons-container">
           <NavLink to='/people' ><button className="nav-btn">PEOPLE</button></NavLink>
           <NavLink to= '/planets'><button className="nav-btn">PLANETS</button></NavLink>
-          <NavLink to= '/vehicles'className="nav-btn" >VEHICLES</NavLink>
+          <NavLink to= '/vehicles'className="nav-btn" ><button className="nav-btn">VEHICLES</button></NavLink>
           <div className="fav-btn-container">
             <p className="fav-count">0</p><button className="nav-fav-btn">FAVORITES</button>
           </div>

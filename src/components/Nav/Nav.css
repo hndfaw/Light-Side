@@ -68,3 +68,7 @@
 .fav-btn-container {
   display: flex;
 }
+
+.active {
+  background-color: #000;
+}

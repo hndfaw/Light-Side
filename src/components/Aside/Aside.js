@@ -9,11 +9,9 @@ const randomFilm = films[0];
 <aside className="aside">
   {!films.length && <p>Loading....</p> }
     <section className="body">
-        <div className="crawl">
-           <p>{randomFilm.opening_crawl}</p>
-           <h4 className="film-title">{randomFilm.title}</h4>
-          <h4>{randomFilm.release_date}</h4>
-        </div>
+      <p>{randomFilm.opening_crawl}</p>
+      <h4 className="film-title">{randomFilm.title}</h4>
+      <h4>{randomFilm.release_date}</h4>
     </section>
   </aside>
   )
