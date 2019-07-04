@@ -24,9 +24,7 @@ const Card = ({ item }) => {
         </>
       )
     }
-
     if (item.type === 'vehicles') {
-      console.log(item)
       return (
         <>
           <p><span className="label">Model</span>{item.model}</p>
@@ -35,9 +33,7 @@ const Card = ({ item }) => {
         </>
       )
     }
-
   }
-       
   
   return (
     <section className="card">
@@ -49,34 +45,6 @@ const Card = ({ item }) => {
     </section>
   )
 }
-
-// const PlanetCard = ({ planet }) => {
-//   return (
-//     <section className="card">
-//       <h2 className="card-header">{planet.name}</h2>
-//       <div className="card-body">
-//         <p>Terrain: {planet.terrain}</p>
-//         <p>Diameter: {planet.diameter}</p>
-//         <p>Population: {planet.population}</p>
-//       </div>
-//       <footer className="card-footer"></footer>
-//     </section>
-//   )
-// }
-
-// const VehicleCard = ({ vehicle }) => {
-//   return (
-//     <section className="card">
-//       <h2 className="card-header">{person.name}</h2>
-//       <div className="card-body">
-//         <p>Model: {vehicle.model}</p>
-//         <p>Class: {vehicle.vehicle_class}</p>
-//         <p>Number of Passengers: {vehicle.passengers}</p>
-//       </div>
-//       <footer className="card-footer"></footer>
-//     </section>
-//   )
-// }
 
 
 
