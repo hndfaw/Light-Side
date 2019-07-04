@@ -29,7 +29,15 @@
   height: 15%;
 }
 
-p {
+.car-fav-btn {
+  width: 30px;
+  float: right;
+  cursor: pointer;
+  padding-right: 7px;
+  padding-top: 8px;
+}
+
+.body-item {
   padding: 5px;
   padding-left: 12px;
 }
@@ -39,3 +47,4 @@ p {
   display: block;
   font-size: 12px;
 }
+

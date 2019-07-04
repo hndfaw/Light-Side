@@ -1261,8 +1261,76 @@ planets : {
           "edited": "2014-12-20T20:58:18.437000Z",
           "url": "https://swapi.co/api/planets/11/"
       }
+  ],
+},
+  favorites : [
+    {
+        "type": "planets",
+        "name": "Alderaan",
+        "rotation_period": "24",
+        "orbital_period": "364",
+        "diameter": "12500",
+        "climate": "temperate",
+        "gravity": "1 standard",
+        "terrain": "grasslands, mountains",
+        "surface_water": "40",
+        "population": "2000000000",
+        "residents": [
+            "https://swapi.co/api/people/5/",
+            "https://swapi.co/api/people/68/",
+            "https://swapi.co/api/people/81/"
+        ],
+        "films": [
+            "https://swapi.co/api/films/6/",
+            "https://swapi.co/api/films/1/"
+        ],
+        "created": "2014-12-10T11:35:48.479000Z",
+        "edited": "2014-12-20T20:58:18.420000Z",
+        "url": "https://swapi.co/api/planets/2/"
+    },
+    {
+        "type": "planets",
+        "name": "Yavin IV",
+        "rotation_period": "24",
+        "orbital_period": "4818",
+        "diameter": "10200",
+        "climate": "temperate, tropical",
+        "gravity": "1 standard",
+        "terrain": "jungle, rainforests",
+        "surface_water": "8",
+        "population": "1000",
+        "residents": [],
+        "films": [
+            "https://swapi.co/api/films/1/"
+        ],
+        "created": "2014-12-10T11:37:19.144000Z",
+        "edited": "2014-12-20T20:58:18.421000Z",
+        "url": "https://swapi.co/api/planets/3/"
+    },
+    {
+        "type": "vehicles",
+        "name": "Sand Crawler",
+        "model": "Digger Crawler",
+        "manufacturer": "Corellia Mining Corporation",
+        "cost_in_credits": "150000",
+        "length": "36.8",
+        "max_atmosphering_speed": "30",
+        "crew": "46",
+        "passengers": "30",
+        "cargo_capacity": "50000",
+        "consumables": "2 months",
+        "vehicle_class": "wheeled",
+        "pilots": [],
+        "films": [
+            "https://swapi.co/api/films/5/",
+            "https://swapi.co/api/films/1/"
+        ],
+        "created": "2014-12-10T15:36:25.724000Z",
+        "edited": "2014-12-22T18:21:15.523587Z",
+        "url": "https://swapi.co/api/vehicles/4/"
+    },
   ]
-}
+
 
 };
 

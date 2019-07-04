@@ -1,49 +1,69 @@
 import React from 'react';
 import './Card.css';
+import star from '../../images/star.png';
+import starActive from '../../images/star-active.png';
 
-const Card = ({ item }) => {
 
+class Card extends React.Component {
+  state = {
+    favCount: this.props.favCount
+  }
 
-  const Items = () => {
+  // console.log(item)
+   Items = () => {
+    const {item} = this.props;
     if (item.type === 'people') {
+      // console.log('people')
       return (
         <>
-          <p><span className="label">Birth Year</span>{item.birth_year}</p>
-          <p><span className="label">Gender</span>{item.gender}</p>
-          <p><span className="label">Height</span>{item.height}</p>
-          <p><span className="label">Eye Color</span>{item.eye_color}</p>
+          <p className="body-item"><span className="label">Birth Year</span>{item.birth_year}</p>
+          <p className="body-item"><span className="label">Gender</span>{item.gender}</p>
+          <p className="body-item"><span className="label">Height</span>{item.height}</p>
+          <p className="body-item"><span className="label">Eye Color</span>{item.eye_color}</p>
         </>
       )
     }
-    if (item.type === 'planet') {
+    if (item.type === 'planets') {
+      // console.log('planet')
       return (
         <>
-          <p><span className="label">Terrain</span>{item.terrain}</p>
-          <p><span className="label">Diameter</span>{item.diameter}</p>
-          <p><span className="label">Population</span>{item.population}</p>
+          <p className="body-item"><span className="label">Terrain</span>{item.terrain}</p>
+          <p className="body-item"><span className="label">Diameter</span>{item.diameter}</p>
+          <p className="body-item"><span className="label">Population</span>{item.population}</p>
         </>
       )
     }
     if (item.type === 'vehicles') {
+      // console.log('vehicles')
       return (
         <>
-          <p><span className="label">Model</span>{item.model}</p>
-          <p><span className="label">Class</span>{item.vehicle_class}</p>
-          <p><span className="label">Number of Passengers</span>{item.passengers}</p>
+          <p className="body-item"><span className="label">Model</span>{item.model}</p>
+          <p className="body-item"><span className="label">Class</span>{item.vehicle_class}</p>
+          <p className="body-item"><span className="label">Number of Passengers</span>{item.passengers}</p>
         </>
       )
     }
   }
+
+   run = (e) => {
+    this.props.handleFavorite(e.target.id)
+  }
+  render () {
+    const starType = !this.props.item.favorite ? star : starActive;
+    return (
+      <section className="card">
+        <h3 className="card-header">{this.props.item.name}</h3>
+        <div className="card-body">
+          {this.Items()}
+        </div>
+        <footer className="card-footer">
+          <img className="car-fav-btn" src={starType} onClick={this.run} id={this.props.item.id} alt="favorite button"/>
+          {/* <button >F</button> */}
+        </footer>
+      </section>
+    )
+  }
   
-  return (
-    <section className="card">
-      <h3 className="card-header">{item.name}</h3>
-      <div className="card-body">
-        {Items()}
-      </div>
-      <footer className="card-footer"></footer>
-    </section>
-  )
 }
 
 
