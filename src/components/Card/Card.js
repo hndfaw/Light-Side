@@ -16,7 +16,6 @@ const Card = ({ item }) => {
       )
     }
     if (item.type === 'planet') {
-
       return (
         <>
           <p>Terrain: {item.terrain}</p>
@@ -30,9 +29,9 @@ const Card = ({ item }) => {
       console.log(item)
       return (
         <>
-          <p>Terrain: {item.terrain}</p>
-          <p>Diameter: {item.diameter}</p>
-          <p>Population: {item.population}</p>
+          <p>Model: {item.model}</p>
+          <p>Class: {item.vehicle_class}</p>
+          <p>Number of Passengers: {item.passengers}</p>
         </>
       )
     }
