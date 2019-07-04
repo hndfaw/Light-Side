@@ -9,11 +9,11 @@ class Card extends React.Component {
     favCount: this.props.favCount
   }
 
-  // console.log(item)
-   Items = () => {
+
+  Items = () => {
     const {item} = this.props;
     if (item.type === 'people') {
-      // console.log('people')
+
       return (
         <>
           <p className="body-item"><span className="label">Birth Year</span>{item.birth_year}</p>
@@ -24,7 +24,7 @@ class Card extends React.Component {
       )
     }
     if (item.type === 'planets') {
-      // console.log('planet')
+
       return (
         <>
           <p className="body-item"><span className="label">Terrain</span>{item.terrain}</p>
@@ -34,7 +34,7 @@ class Card extends React.Component {
       )
     }
     if (item.type === 'vehicles') {
-      // console.log('vehicles')
+
       return (
         <>
           <p className="body-item"><span className="label">Model</span>{item.model}</p>
@@ -45,7 +45,7 @@ class Card extends React.Component {
     }
   }
 
-   run = (e) => {
+   changeFav = (e) => {
     this.props.handleFavorite(e.target.id)
   }
   render () {
@@ -57,8 +57,8 @@ class Card extends React.Component {
           {this.Items()}
         </div>
         <footer className="card-footer">
-          <img className="car-fav-btn" src={starType} onClick={this.run} id={this.props.item.id} alt="favorite button"/>
-          {/* <button >F</button> */}
+          <img className="car-fav-btn" src={starType} onClick={this.changeFav} id={this.props.item.id} alt="favorite button"/>
+
         </footer>
       </section>
     )
