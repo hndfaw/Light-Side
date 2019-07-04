@@ -2,16 +2,30 @@ import React from 'react';
 import './Card.css';
 
 const Card = ({ item }) => {
-  console.log(item.type)
+
+
+  const Items = () => {
+    if (item.type === 'people') {
+      return (
+        <div className="card-body">
+        <p>Birth Year: {item.birth_year}</p>
+        <p>Gender: {item.gender}</p>
+        <p>Height: {item.height}</p>
+        <p>Eye Color: {item.eye_color}</p>
+      </div> 
+    )
+    }
+    
+  }
+       
+  
+  
   return (
     <section className="card">
       <h2 className="card-header">{item.name}</h2>
-      {/* <div className="card-body">
-        <p>Birth Year: {person.birth_year}</p>
-        <p>Gender: {person.gender}</p>
-        <p>Height: {person.height}</p>
-        <p>Eye Color: {person.eye_color}</p>
-      </div> */}
+      <div className="card-body">
+        {Items()}
+      </div>
       <footer className="card-footer"></footer>
     </section>
   )
