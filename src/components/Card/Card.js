@@ -8,19 +8,19 @@ const Card = ({ item }) => {
     if (item.type === 'people') {
       return (
         <>
-          <p>Birth Year: {item.birth_year}</p>
-          <p>Gender: {item.gender}</p>
-          <p>Height: {item.height}</p>
-          <p>Eye Color: {item.eye_color}</p>
+          <p><span className="label">Birth Year</span>{item.birth_year}</p>
+          <p><span className="label">Gender</span>{item.gender}</p>
+          <p><span className="label">Height</span>{item.height}</p>
+          <p><span className="label">Eye Color</span>{item.eye_color}</p>
         </>
       )
     }
     if (item.type === 'planet') {
       return (
         <>
-          <p>Terrain: {item.terrain}</p>
-          <p>Diameter: {item.diameter}</p>
-          <p>Population: {item.population}</p>
+          <p><span className="label">Terrain</span>{item.terrain}</p>
+          <p><span className="label">Diameter</span>{item.diameter}</p>
+          <p><span className="label">Population</span>{item.population}</p>
         </>
       )
     }
@@ -29,9 +29,9 @@ const Card = ({ item }) => {
       console.log(item)
       return (
         <>
-          <p>Model: {item.model}</p>
-          <p>Class: {item.vehicle_class}</p>
-          <p>Number of Passengers: {item.passengers}</p>
+          <p><span className="label">Model</span>{item.model}</p>
+          <p><span className="label">Class</span>{item.vehicle_class}</p>
+          <p><span className="label">Number of Passengers</span>{item.passengers}</p>
         </>
       )
     }

@@ -1,5 +1,5 @@
 .card {
-  height: 260px;
+  height: 280px;
   width: 200px;
   /* border: 1px solid red; */
   margin: 10px;
@@ -21,15 +21,21 @@
   color: white;
   height: 65%;
   text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  padding-left: 10px;
 }
 
 .card-footer {
   background-color: rgba(0,0,0,0.19);
   border: 1px solid #3e3e3e;
   height: 15%;
+}
 
+p {
+  padding: 5px;
+  padding-left: 12px;
+}
+
+.label {
+  color: gray;
+  display: block;
+  font-size: 12px;
 }
