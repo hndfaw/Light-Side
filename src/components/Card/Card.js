@@ -7,22 +7,42 @@ const Card = ({ item }) => {
   const Items = () => {
     if (item.type === 'people') {
       return (
-        <div className="card-body">
-        <p>Birth Year: {item.birth_year}</p>
-        <p>Gender: {item.gender}</p>
-        <p>Height: {item.height}</p>
-        <p>Eye Color: {item.eye_color}</p>
-      </div> 
-    )
+        <>
+          <p>Birth Year: {item.birth_year}</p>
+          <p>Gender: {item.gender}</p>
+          <p>Height: {item.height}</p>
+          <p>Eye Color: {item.eye_color}</p>
+        </>
+      )
     }
-    
+    if (item.type === 'planet') {
+
+      return (
+        <>
+          <p>Terrain: {item.terrain}</p>
+          <p>Diameter: {item.diameter}</p>
+          <p>Population: {item.population}</p>
+        </>
+      )
+    }
+
+    if (item.type === 'vehicles') {
+      console.log(item)
+      return (
+        <>
+          <p>Terrain: {item.terrain}</p>
+          <p>Diameter: {item.diameter}</p>
+          <p>Population: {item.population}</p>
+        </>
+      )
+    }
+
   }
        
   
-  
   return (
     <section className="card">
-      <h2 className="card-header">{item.name}</h2>
+      <h3 className="card-header">{item.name}</h3>
       <div className="card-body">
         {Items()}
       </div>

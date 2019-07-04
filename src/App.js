@@ -32,7 +32,7 @@ class App extends Component {
     })
 
     const planets =  data.planets.results.map((planet, i) => {
-      planet.type = 'panets';
+      planet.type = 'planet';
       planet.id = i;
       return planet;
     })
