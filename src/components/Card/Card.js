@@ -5,10 +5,6 @@ import starActive from '../../images/star-active.png';
 
 
 class Card extends React.Component {
-  state = {
-    favCount: this.props.favCount
-  }
-
 
   Items = () => {
     const {item} = this.props;
