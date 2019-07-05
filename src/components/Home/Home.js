@@ -7,7 +7,7 @@ const Home = () => {
   return (
 
   <aside className="home">
-    <p>Welcome to LiteSite, please choose a category</p>
+    <p>Welcome to LITE SIDE, please choose a category</p>
   </aside>
   )
 

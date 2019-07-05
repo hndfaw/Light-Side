@@ -1,11 +1,12 @@
 .home {
-  background-color: #332c2c;
-  border: 1px solid #ffff2b;
+  background-color: #2f2f2f;
+  border: 1px solid #ffff2b54;
   box-sizing: border-box;
   color: #ffff2b;
   height: 90vh;
   width: 50%;
-  font-size: 2em;
+  font-size: 1.5em;
+  padding-top: 20%;
   }
 
   
