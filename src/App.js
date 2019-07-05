@@ -14,6 +14,7 @@ class App extends Component {
       films: data.films.results,
       data: [],
       favCount: 0,
+      asideShow: true,
       // people: [],
       // planets: [],
       // vehicles: [],
@@ -29,8 +30,7 @@ class App extends Component {
     //   film.id = `fl-${i}`;
     //   return film;
     // })
- 
-
+    
     const people =  data.people.results.map((person, i) => {
       person.type = 'people';
       person.id = `pp-${i}`;
@@ -60,6 +60,8 @@ class App extends Component {
     //   .then(data => data.results)
     //   .then(films => this.setState({ films }))
     //   .catch(error => this.setState({ error : error.message }))
+
+    
   }
 
   handleFavorite = (id) => {
@@ -99,22 +101,36 @@ class App extends Component {
         )
      }
    }
+   
+   updateAsideShow = () => {
+    this.setState({asideShow: !this.state.asideShow})
+   }
 
   render() {
-    const {films, favCount} = this.state;
+    const {films, favCount, data, asideShow} = this.state;
 
     return (
-      
       <div className="App">
-        {this.state.films.length && <Aside films={films} />}
-        {/* {!this.state.films.length && <p>Loading....</p> }
-        {!this.state.people.length && <p>Loading....</p> } */}
+        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow}/>}
+        {/* {/* {!this.state.films.length && <p>Loading....</p> } */}
+        {!this.state.data && <p>Loading....</p> } 
         {/* {this.state.people.length && <PeopleCardContainer people={this.state.people} />} */}
         <Route exact path='/' component={Home} />
-        <Route exact path='/people' render={()=> <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('people')} />} />
-        <Route exact path='/planets' render={()=> <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('planets')} />}/>
-        <Route exact path='/vehicles' render={()=> <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('vehicles')} />}/>
-        <Route exact path='/favorites' render={()=> <CardContainer  handleFavorite={this.handleFavorite} data={this.filterData('favorite')} favCount={favCount} />}/>
+        <Route exact path='/people' render={({match})=> {
+
+          return (data.length !== 0) && <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('people')} path={match.path} updateCurrentPath={this.updateCurrentPath} asideShow={asideShow}/>
+          }} />
+
+        <Route exact path='/planets' render={({match})=> {
+        return (data.length !== 0)  && <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('planets')} path={match.path} updateCurrentPath={this.updateCurrentPath} asideShow={asideShow}/>}}/>
+
+
+        <Route exact path='/vehicles' render={({match})=> {
+        return (data.length !== 0) &&  <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('vehicles')} path={match.path} updateCurrentPath={this.updateCurrentPath} asideShow={asideShow}/>}}/>
+
+        <Route exact path='/favorites' render={({match})=> {
+        return (data.length !== 0) && <CardContainer  handleFavorite={this.handleFavorite} data={this.filterData('favorite')} favCount={favCount} path={match.path} updateCurrentPath={this.updateCurrentPath} asideShow={asideShow}/> }} />
+
         <Nav favCount={favCount}/>
       </div>
     );

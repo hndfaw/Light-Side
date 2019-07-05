@@ -12,40 +12,42 @@
 
   .body {
    position: absolute;
-   width: 100%;
+   left: 12px;
+   width: 90%;
    height: 100%;
    margin: 0;
-   line-height: 50px;
+   line-height: 30px;
    text-align: center;
-   /* Starting position */
-   -moz-transform:translateY(100%);
-   -webkit-transform:translateY(100%);	
-   transform:translateY(100%);
-   /* Apply animation to this element */	
-   -moz-animation: scroll-up 15s linear infinite;
-   -webkit-animation: scroll-up 15s linear infinite;
    animation: scroll-up 15s linear infinite;
   }
-  /* Move it (define the animation) */
-  @-moz-keyframes scroll-up {
-   0%   { -moz-transform: translateY(100%); }
-   100% { -moz-transform: translateY(-100%); }
-  }
-  @-webkit-keyframes scroll-up {
-   0%   { -webkit-transform: translateY(100%); }
-   100% { -webkit-transform: translateY(-100%); }
-  }
+
   @keyframes scroll-up {
    0%   { 
-   -moz-transform: translateY(100%); /* Browser bug fix */
-   -webkit-transform: translateY(100%); /* Browser bug fix */
    transform: translateY(100%); 		
    }
    100% { 
-   -moz-transform: translateY(-100%); /* Browser bug fix */
-   -webkit-transform: translateY(-100%); /* Browser bug fix */
-   transform: translateY(-100%); 
+   transform: translateY(-110%); 
    }
   }
 
+.minimize-side {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.178);
+  border-radius: 10px;
+  bottom: 5px;
+  color: rgb(58, 57, 57);
+  cursor: pointer;
+  display: flex;
+  font-size: 20px;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: 3px;
+  width: 50px;
+  font-size: 12px;
+}
 
+.minimize-side:hover {
+  background: rgba(255, 255, 255, 0.199);
+  color: black;
+}

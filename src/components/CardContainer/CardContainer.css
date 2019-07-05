@@ -10,7 +10,7 @@
 .add-fav-notes {
   font-size: 24px;
   color: rgb(134, 133, 133);
-  padding-top: 50%;
+  padding-top: 20%;
 }
 
 ::-webkit-scrollbar {
@@ -22,7 +22,7 @@
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #626262; 
+  background: #4e4e4e; 
 }
 
 /* Handle on hover */

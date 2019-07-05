@@ -4,6 +4,7 @@ import './Nav.css';
 import logo from '../../images/logo.png';
 
 const Nav = ({favCount}) => {
+
   return (
     <nav className="nav">
         <img className="logo" src={logo} alt="lite side logo"/>
