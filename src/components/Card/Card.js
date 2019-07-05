@@ -1,82 +1,70 @@
 import React from 'react';
 import './Card.css';
+import star from '../../images/star.png';
+import starActive from '../../images/star-active.png';
 
-const Card = ({ item }) => {
 
-
-  const Items = () => {
-    if (item.type === 'people') {
-      return (
-        <>
-          <p><span className="label">Birth Year</span>{item.birth_year}</p>
-          <p><span className="label">Gender</span>{item.gender}</p>
-          <p><span className="label">Height</span>{item.height}</p>
-          <p><span className="label">Eye Color</span>{item.eye_color}</p>
-        </>
-      )
-    }
-    if (item.type === 'planet') {
-      return (
-        <>
-          <p><span className="label">Terrain</span>{item.terrain}</p>
-          <p><span className="label">Diameter</span>{item.diameter}</p>
-          <p><span className="label">Population</span>{item.population}</p>
-        </>
-      )
-    }
-
-    if (item.type === 'vehicles') {
-      console.log(item)
-      return (
-        <>
-          <p><span className="label">Model</span>{item.model}</p>
-          <p><span className="label">Class</span>{item.vehicle_class}</p>
-          <p><span className="label">Number of Passengers</span>{item.passengers}</p>
-        </>
-      )
-    }
-
+class Card extends React.Component {
+  state = {
+    favCount: this.props.favCount
   }
-       
+
+
+  Items = () => {
+    const {item} = this.props;
+    if (item.type === 'people') {
+
+      return (
+        <>
+          <p className="body-item"><span className="label">Birth Year</span>{item.birth_year}</p>
+          <p className="body-item"><span className="label">Gender</span>{item.gender}</p>
+          <p className="body-item"><span className="label">Height</span>{item.height}</p>
+          <p className="body-item"><span className="label">Eye Color</span>{item.eye_color}</p>
+        </>
+      )
+    }
+    if (item.type === 'planets') {
+
+      return (
+        <>
+          <p className="body-item"><span className="label">Terrain</span>{item.terrain}</p>
+          <p className="body-item"><span className="label">Diameter</span>{item.diameter}</p>
+          <p className="body-item"><span className="label">Population</span>{item.population}</p>
+        </>
+      )
+    }
+    if (item.type === 'vehicles') {
+
+      return (
+        <>
+          <p className="body-item"><span className="label">Model</span>{item.model}</p>
+          <p className="body-item"><span className="label">Class</span>{item.vehicle_class}</p>
+          <p className="body-item"><span className="label">Number of Passengers</span>{item.passengers}</p>
+        </>
+      )
+    }
+  }
+
+   changeFav = (e) => {
+    this.props.handleFavorite(e.target.id)
+  }
+  render () {
+    const starType = !this.props.item.favorite ? star : starActive;
+    return (
+      <section className="card">
+        <h3 className="card-header">{this.props.item.name}</h3>
+        <div className="card-body">
+          {this.Items()}
+        </div>
+        <footer className="card-footer">
+          <img className="car-fav-btn" src={starType} onClick={this.changeFav} id={this.props.item.id} alt="favorite button"/>
+
+        </footer>
+      </section>
+    )
+  }
   
-  return (
-    <section className="card">
-      <h3 className="card-header">{item.name}</h3>
-      <div className="card-body">
-        {Items()}
-      </div>
-      <footer className="card-footer"></footer>
-    </section>
-  )
 }
-
-// const PlanetCard = ({ planet }) => {
-//   return (
-//     <section className="card">
-//       <h2 className="card-header">{planet.name}</h2>
-//       <div className="card-body">
-//         <p>Terrain: {planet.terrain}</p>
-//         <p>Diameter: {planet.diameter}</p>
-//         <p>Population: {planet.population}</p>
-//       </div>
-//       <footer className="card-footer"></footer>
-//     </section>
-//   )
-// }
-
-// const VehicleCard = ({ vehicle }) => {
-//   return (
-//     <section className="card">
-//       <h2 className="card-header">{person.name}</h2>
-//       <div className="card-body">
-//         <p>Model: {vehicle.model}</p>
-//         <p>Class: {vehicle.vehicle_class}</p>
-//         <p>Number of Passengers: {vehicle.passengers}</p>
-//       </div>
-//       <footer className="card-footer"></footer>
-//     </section>
-//   )
-// }
 
 
 
