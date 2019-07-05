@@ -7,7 +7,8 @@ import Card from '../Card/Card.js'
 const CardContainer = ({ data }) => {
 
 const Cards = data.map( item => {
- return <Card key={Date.now()} item={item} />
+
+  return <Card key={item.id} item={item} />
 
   })
 
