@@ -3,8 +3,11 @@ import './Aside.css'
 
 
 const Aside = ({films}) => {
+
 const randomFilm = films[0];
-  return (
+
+
+return (
 
 <aside className="aside">
   {!films.length && <p>Loading....</p> }

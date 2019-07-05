@@ -7,6 +7,12 @@
   overflow: scroll;
 }
 
+.add-fav-notes {
+  font-size: 24px;
+  color: rgb(134, 133, 133);
+  padding-top: 50%;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

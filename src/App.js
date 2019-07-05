@@ -21,6 +21,7 @@ class App extends Component {
       error: ''
     }
   }
+
   
   componentDidMount() {
     // const films =  data.films.results.map((film, i) => {
@@ -28,6 +29,8 @@ class App extends Component {
     //   film.id = `fl-${i}`;
     //   return film;
     // })
+ 
+
     const people =  data.people.results.map((person, i) => {
       person.type = 'people';
       person.id = `pp-${i}`;
@@ -69,18 +72,20 @@ class App extends Component {
     });
     this.setState({data: [...items]})
     this.favCounter();
+
   }
 
   favCounter = () => {
-    let x = 0;
+    let numOfFavorites = 0;
      this.state.data.forEach(i => {
       if (i.favorite) {
-        x++;
+        numOfFavorites++;
       }
     }
     )
-    this.setState({favCount: x})
+    this.setState({favCount: numOfFavorites})
   }
+
 
    filterData = (type) => {
 
@@ -94,12 +99,14 @@ class App extends Component {
         )
      }
    }
-  
+
   render() {
+    const {films, favCount} = this.state;
+
     return (
       
       <div className="App">
-        {this.state.films.length && <Aside films={this.state.films} />}
+        {this.state.films.length && <Aside films={films} />}
         {/* {!this.state.films.length && <p>Loading....</p> }
         {!this.state.people.length && <p>Loading....</p> } */}
         {/* {this.state.people.length && <PeopleCardContainer people={this.state.people} />} */}
@@ -107,8 +114,8 @@ class App extends Component {
         <Route exact path='/people' render={()=> <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('people')} />} />
         <Route exact path='/planets' render={()=> <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('planets')} />}/>
         <Route exact path='/vehicles' render={()=> <CardContainer handleFavorite={this.handleFavorite} data={this.filterData('vehicles')} />}/>
-        <Route exact path='/favorites' render={()=> <CardContainer  handleFavorite={this.handleFavorite} data={this.filterData('favorite')} />}/>
-        <Nav favCount={this.state.favCount}/>
+        <Route exact path='/favorites' render={()=> <CardContainer  handleFavorite={this.handleFavorite} data={this.filterData('favorite')} favCount={favCount} />}/>
+        <Nav favCount={favCount}/>
       </div>
     );
   }
