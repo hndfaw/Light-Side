@@ -65,7 +65,6 @@ class App extends Component {
   }
 
   handleFavorite = (id) => {
-
     const items = this.state.data.map(item => {
       if (item.id === id) {
         item.favorite = !item.favorite;
@@ -74,7 +73,6 @@ class App extends Component {
     });
     this.setState({data: [...items]})
     this.favCounter();
-
   }
 
   favCounter = () => {
@@ -90,7 +88,6 @@ class App extends Component {
 
 
    filterData = (type) => {
-
     if (type !== 'favorite') {
       return this.state.data.filter(item => 
         item.type === type

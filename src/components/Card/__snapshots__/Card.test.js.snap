@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the favorited snapshot 1`] = `
+<section
+  className="card"
+>
+  <h3
+    className="card-header"
+  >
+    Luke Skywalker
+  </h3>
+  <div
+    className="card-body"
+  >
+    <p
+      className="body-item"
+    >
+      <span
+        className="label"
+      >
+        Birth Year
+      </span>
+      19BBY
+    </p>
+    <p
+      className="body-item"
+    >
+      <span
+        className="label"
+      >
+        Gender
+      </span>
+      male
+    </p>
+    <p
+      className="body-item"
+    >
+      <span
+        className="label"
+      >
+        Height
+      </span>
+      172
+    </p>
+    <p
+      className="body-item"
+    >
+      <span
+        className="label"
+      >
+        Eye Color
+      </span>
+      blue
+    </p>
+  </div>
+  <footer
+    className="card-footer"
+  >
+    <img
+      alt="favorite button"
+      className="card-fav-btn"
+      id="pp-0"
+      onClick={[Function]}
+      src="star-active.png"
+    />
+  </footer>
+</section>
+`;

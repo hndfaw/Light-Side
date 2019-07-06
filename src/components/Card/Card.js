@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Card.css';
 import star from '../../images/star.png';
 import starActive from '../../images/star-active.png';
 
 
-class Card extends React.Component {
+class Card extends Component {
 
-  Items = () => {
+  //we should probably change name of this method, it is confusing with the capital I
+
+  items = () => {
     const {item} = this.props;
     if (item.type === 'people') {
 
@@ -41,7 +43,7 @@ class Card extends React.Component {
     }
   }
 
-   changeFav = (e) => {
+  changeFav = (e) => {
     this.props.handleFavorite(e.target.id)
   }
   render () {
@@ -54,8 +56,7 @@ class Card extends React.Component {
           {this.Items()}
         </div>
         <footer className="card-footer">
-          <img className="car-fav-btn" src={starType} onClick={this.changeFav} id={this.props.item.id} alt="favorite button"/>
-
+          <img className="card-fav-btn" src={starType} onClick={this.changeFav} id={this.props.item.id} alt="favorite button"/>
         </footer>
       </section>
     )

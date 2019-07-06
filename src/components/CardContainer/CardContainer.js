@@ -4,11 +4,12 @@ import Card from '../Card/Card.js'
 
 
 
+
  const CardContainer = ({ data, handleFavorite, favCount, asideShow }) => {
 
-  const favNote = favCount === 0 && <p className="add-fav-notes">You don't have any favorite cards...</p>;
+ const favNote = favCount === 0 && <p className="add-fav-notes">You don't have any favorite cards...</p>;
   
-  const mainWidth = asideShow ? '50%' : '80%';
+ const mainWidth = asideShow ? '50%' : '80%';
 
   const mainStyle = favCount === 0 ? {display: 'block', width: mainWidth, transition: '0.5s'} : {display: 'grid', width: mainWidth, transition: '0.5s'};
   
