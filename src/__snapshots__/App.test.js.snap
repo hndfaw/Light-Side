@@ -5,6 +5,7 @@ exports[`App should match the snapshot 1`] = `
   className="App"
 >
   <Aside
+    asideShow={true}
     films={
       Array [
         Object {
@@ -676,6 +677,7 @@ Luke's whereabouts....",
         },
       ]
     }
+    updateAsideShow={[Function]}
   />
   <Route
     component={[Function]}

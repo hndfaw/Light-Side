@@ -15,10 +15,6 @@ class App extends Component {
       data: [],
       favCount: 0,
       asideShow: true,
-      // people: [],
-      // planets: [],
-      // vehicles: [],
-      // favorites: data.favorites,
       error: ''
     }
   }
@@ -74,7 +70,6 @@ class App extends Component {
     });
     this.setState({data: [...items]})
     this.favCounter();
-
   }
 
   favCounter = () => {
@@ -111,7 +106,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow}/>}
+        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/>}
         {/* {/* {!this.state.films.length && <p>Loading....</p> } */}
         {!this.state.data && <p>Loading....</p> } 
         {/* {this.state.people.length && <PeopleCardContainer people={this.state.people} />} */}

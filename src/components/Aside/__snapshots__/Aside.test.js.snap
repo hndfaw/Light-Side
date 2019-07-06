@@ -3,6 +3,21 @@
 exports[`Aside should match the snapshot 1`] = `
 <aside
   className="aside"
+  style={
+    Object {
+      "alignItems": "center",
+      "borderRadius": "10px",
+      "bottom": "12px",
+      "color": "transparent",
+      "display": "flex",
+      "height": "20px",
+      "justifyContent": "center",
+      "left": "12px",
+      "position": "absolute",
+      "transition": "0.2s",
+      "width": "160px",
+    }
+  }
 >
   <section
     className="body"
@@ -39,5 +54,20 @@ freedom to the galaxy....
       1977-05-25
     </h4>
   </section>
+  <div
+    className="minimize-side"
+    onClick={[Function]}
+    style={
+      Object {
+        "bottom": "0",
+        "color": "black",
+        "height": "100%",
+        "right": "0",
+        "width": "100%",
+      }
+    }
+  >
+    Open Opening Crawl
+  </div>
 </aside>
 `;
