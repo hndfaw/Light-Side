@@ -3,7 +3,19 @@
 exports[`CardContainer should match the snapshot with data passed correctly 1`] = `
 <main
   className="main"
+  style={
+    Object {
+      "display": "block",
+      "transition": "0.5s",
+      "width": "80%",
+    }
+  }
 >
+  <p
+    className="add-fav-notes"
+  >
+    You don't have any favorite cards...
+  </p>
   <Card
     handleFavorite={[MockFunction]}
     item={

@@ -41,10 +41,17 @@ beforeEach(()=> {
   });
 
   it('should run handleFavorite prop when the Favorite button is clicked', () => {
-    const wrapper = shallow(<Card key={fakeData.id} item={fakeData} handleFavorite={jest.fn()} isFavorited={true} />)
-    wrapper.instance().handleFavorite = jest.fn();
+    const handleFavoriteMock = jest.fn();
+    const wrapper = mount(
+    <Card
+    key={fakeData.id}
+    item={fakeData}
+    handleFavorite={handleFavoriteMock}
+     />)
+    
     wrapper.find('.card-fav-btn').simulate('click');
-    expect(wrapper.instance().handleFavorite).toHaveBeenCalledWith('pp-00');
+
+    expect(handleFavoriteMock).toBeCalledWith('pp-0');
   });
 
 });

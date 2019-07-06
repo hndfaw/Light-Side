@@ -1,19 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Aside.css'
 
 
-class Aside extends React.Component {
-state = {
-  asideShow: true,
-}
+class Aside extends Component {
 
-  updateAsideShow = () => {
-    this.setState({asideShow: !this.state.asideShow})
-    this.props.updateAsideShow()
-}
 
 asideStyle = () => {
-  if (this.state.asideShow === true) {
+  if (this.props.asideShow === true) {
     return {
       height: '90vh',
       transition: '0.1s',
@@ -36,7 +29,7 @@ asideStyle = () => {
 }
 
 btnStyle = () => {
-  if (this.state.asideShow === true) {
+  if (this.props.asideShow === true) {
     return {
       width: '50px'
     }
@@ -52,8 +45,8 @@ btnStyle = () => {
 }
 
 render () {
-  const {films} = this.props;
-  const {asideShow} = this.state;
+  const {films, asideShow, updateAsideShow} = this.props;
+
   const movLength = films.length;
   const randomNumber = Math.floor(Math.random() * Math.floor(movLength));
   const randomFilm = films[randomNumber];
@@ -66,7 +59,7 @@ render () {
           <h4 className="film-title">{randomFilm.title}</h4>
           <h4>{randomFilm.release_date}</h4>
         </section>
-        <div style={this.btnStyle()} onClick={this.updateAsideShow} className="minimize-side">{closeCrawl}</div>
+        <div style={this.btnStyle()} onClick={() => updateAsideShow()} className="minimize-side">{closeCrawl}</div>
       </aside>
       )
 }
