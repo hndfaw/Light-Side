@@ -45,7 +45,8 @@ class Card extends React.Component {
     this.props.handleFavorite(e.target.id)
   }
   render () {
-    const starType = !this.props.item.favorite ? star : starActive;
+    const {favorite} = this.props.item
+    const starType = !favorite ? star : starActive;
     return (
       <section className="card">
         <h3 className="card-header">{this.props.item.name}</h3>
