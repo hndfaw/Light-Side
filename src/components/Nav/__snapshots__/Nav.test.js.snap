@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match the snapshot with all data passed in correctly 1`] = `
+<nav
+  className="nav"
+>
+  <img
+    alt="lite side logo"
+    className="logo"
+    src="logo.png"
+  />
+  <div
+    className="buttons-container"
+  >
+    <NavLink
+      activeClassName="active-btn"
+      className="nav-btn"
+      to="/people"
+    >
+      PEOPLE
+    </NavLink>
+    <NavLink
+      activeClassName="active-btn"
+      className="nav-btn"
+      to="/planets"
+    >
+      PLANETS
+    </NavLink>
+    <NavLink
+      activeClassName="active-btn"
+      className="nav-btn"
+      to="/vehicles"
+    >
+      VEHICLES
+    </NavLink>
+    <div
+      className="fav-btn-container"
+    >
+      <p
+        className="fav-count"
+      />
+      <NavLink
+        activeClassName="fav-active"
+        className="nav-fav-btn"
+        to="/favorites"
+      >
+        FAVORITES
+      </NavLink>
+    </div>
+  </div>
+</nav>
+`;
