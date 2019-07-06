@@ -4,11 +4,12 @@ import './Nav.css';
 import logo from '../../images/logo.png';
 
 const Nav = ({favCount}) => {
+
   return (
     <nav className="nav">
         <img className="logo" src={logo} alt="lite side logo"/>
         <div className="buttons-container">
-          <NavLink to='/people' className="nav-btn" activeClassName="active-btn">PEOPLE</NavLink>
+          <NavLink to='/people' className="nav-btn" activeClassName="active-btn" >PEOPLE</NavLink>
           <NavLink to='/planets' className="nav-btn" activeClassName="active-btn">PLANETS</NavLink>
           <NavLink to='/vehicles' className="nav-btn" activeClassName="active-btn">VEHICLES</NavLink>
           <div className="fav-btn-container">
