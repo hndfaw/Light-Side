@@ -66,3 +66,5 @@ exports[`Card should match the favorited snapshot 1`] = `
   </footer>
 </section>
 `;
+
+exports[`Card should match the snapshot 1`] = `ShallowWrapper {}`;

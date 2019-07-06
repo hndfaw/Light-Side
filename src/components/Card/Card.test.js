@@ -32,7 +32,7 @@ beforeEach(()=> {
 
   it ('should match the snapshot', () => {
     const wrapper = shallow(<Card key={fakeData.id} item={fakeData} handleFavorite={jest.fn()} isFavorited={false} />)
-    expect(wrapper).toMatchSnapshot;
+    expect(wrapper).toMatchSnapshot();
   })
 
   it('should match the favorited snapshot', () => {
