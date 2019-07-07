@@ -51,9 +51,6 @@ class App extends Component {
     //   .then(films => this.setState({ films }))
     //   .catch(error => this.setState({ error : error.message }))
 
-
-    
-    
   }
 
   handleFavorite = (id) => {
@@ -64,12 +61,12 @@ class App extends Component {
       return item
     });
     this.setState({data: [...items]})
-    this.favCounter();
+    this.favCounter(items);
   }
 
-  favCounter = () => {
+  favCounter = (items) => {
     let numOfFavorites = 0;
-     this.state.data.forEach(i => {
+     items.forEach(i => {
       if (i.favorite) {
         numOfFavorites++;
       }
@@ -101,9 +98,8 @@ class App extends Component {
     return (
       <div className="App">
         {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/>}
-        {/* {/* {!this.state.films.length && <p>Loading....</p> } */}
         {!this.state.data && <p>Loading....</p> } 
-        {/* {this.state.people.length && <PeopleCardContainer people={this.state.people} />} */}
+
         <Route exact path='/' component={Home} />
         <Route exact path='/people' render={({match})=> {
 

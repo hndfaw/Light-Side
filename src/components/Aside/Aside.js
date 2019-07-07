@@ -29,6 +29,7 @@ const asideStyle = () => {
 }
 
 const btnStyle = () => {
+
   if (asideShow === true) {
     return {
       width: '50px'
@@ -42,11 +43,15 @@ const btnStyle = () => {
       color: 'black',
     }
   }
+  
 }
 
-  const movLength = films.length;
-  const randomNumber = Math.floor(Math.random() * Math.floor(movLength));
-  const randomFilm = films[randomNumber];
+    
+    const movLength = films.length;
+    const randomNumber = Math.floor(Math.random() * Math.floor(movLength));
+    const randomFilm = films[randomNumber];
+  
+  
   const closeCrawl = asideShow ? 'Close' : 'Open Opening Crawl';
 
   return (
