@@ -51,6 +51,8 @@ class App extends Component {
     //   .then(films => this.setState({ films }))
     //   .catch(error => this.setState({ error : error.message }))
 
+
+
   }
 
   handleFavorite = (id) => {
@@ -61,7 +63,9 @@ class App extends Component {
       return item
     });
     this.setState({data: [...items]})
+
     this.favCounter(items);
+
   }
 
   favCounter = (items) => {
@@ -98,6 +102,7 @@ class App extends Component {
     return (
       <div className="App">
         {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/>}
+
         {!this.state.data && <p>Loading....</p> } 
 
         <Route exact path='/' component={Home} />

@@ -1,12 +1,15 @@
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Aside.css'
+
 
 
 const Aside = ({asideShow, films, updateAsideShow}) => {
 
 const asideStyle = () => {
   if (asideShow === true) {
+
     return {
       height: '90vh',
       transition: '0.1s',
@@ -28,9 +31,11 @@ const asideStyle = () => {
   }
 }
 
+
 const btnStyle = () => {
 
   if (asideShow === true) {
+
     return {
       width: '50px'
     }
@@ -46,12 +51,14 @@ const btnStyle = () => {
   
 }
 
+
     
     const movLength = films.length;
     const randomNumber = Math.floor(Math.random() * Math.floor(movLength));
     const randomFilm = films[randomNumber];
   
   
+
   const closeCrawl = asideShow ? 'Close' : 'Open Opening Crawl';
 
   return (
@@ -61,7 +68,9 @@ const btnStyle = () => {
           <h4 className="film-title">{randomFilm.title}</h4>
           <h4>{randomFilm.release_date}</h4>
         </section>
+
         <div style={btnStyle()} onClick={() => updateAsideShow()} className="minimize-side">{closeCrawl}</div>
+
       </aside>
       )
   }
@@ -72,6 +81,7 @@ Aside.propTypes = {
   films : PropTypes.array,
   asideShow : PropTypes.bool,
   updateAsideShow : PropTypes.func
+
 }
 
 export default Aside;
