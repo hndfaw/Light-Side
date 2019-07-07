@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Card.css';
 import star from '../../images/star.png';
 import starActive from '../../images/star-active.png';
@@ -61,6 +62,14 @@ class Card extends Component {
     )
   }
   
+}
+
+Card.propTypes = {
+  item : PropTypes.object,
+  handleFavorite : PropTypes.func,
+  favorite : PropTypes.bool,
+  name : PropTypes.string,
+  id: PropTypes.number
 }
 
 

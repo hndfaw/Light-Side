@@ -19,14 +19,8 @@ class App extends Component {
     }
   }
 
-  
   componentDidMount() {
-    // const films =  data.films.results.map((film, i) => {
-    //   film.type = 'films';
-    //   film.id = `fl-${i}`;
-    //   return film;
-    // })
-    
+ 
     const people =  data.people.results.map((person, i) => {
       person.type = 'people';
       person.id = `pp-${i}`;
@@ -57,6 +51,8 @@ class App extends Component {
     //   .then(films => this.setState({ films }))
     //   .catch(error => this.setState({ error : error.message }))
 
+
+    
     
   }
 

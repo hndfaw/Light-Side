@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Nav.css';
 import logo from '../../images/logo.png';
 
@@ -19,6 +20,10 @@ const Nav = ({favCount}) => {
         </div>
     </nav>
   )
+}
+
+Nav.propTypes = {
+  favCount : PropTypes.number
 }
 
 export default Nav;
