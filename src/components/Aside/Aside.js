@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Aside.css'
 
 
 class Aside extends Component {
-
 
 asideStyle = () => {
   if (this.props.asideShow === true) {
@@ -64,7 +64,12 @@ render () {
       )
 }
 
-      
+Aside.propTypes = {
+  films : PropTypes.array,
+  asideShow : PropTypes.bool,
+  updateAsideShow : PropTypes.func
+}
+
 }
 
 export default Aside;
