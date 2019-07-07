@@ -43,7 +43,7 @@
 }
 
 .label {
-  color: gray;
+  color: rgb(165, 165, 165);
   display: block;
   font-size: 12px;
 }

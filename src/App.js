@@ -52,12 +52,10 @@ class App extends Component {
     //   .catch(error => this.setState({ error : error.message }))
 
 
-    
-    
+
   }
 
   handleFavorite = (id) => {
-
     const items = this.state.data.map(item => {
       if (item.id === id) {
         item.favorite = !item.favorite;
@@ -65,12 +63,14 @@ class App extends Component {
       return item
     });
     this.setState({data: [...items]})
-    this.favCounter();
+
+    this.favCounter(items);
+
   }
 
-  favCounter = () => {
+  favCounter = (items) => {
     let numOfFavorites = 0;
-     this.state.data.forEach(i => {
+     items.forEach(i => {
       if (i.favorite) {
         numOfFavorites++;
       }
@@ -81,7 +81,6 @@ class App extends Component {
 
 
    filterData = (type) => {
-
     if (type !== 'favorite') {
       return this.state.data.filter(item => 
         item.type === type
@@ -103,9 +102,9 @@ class App extends Component {
     return (
       <div className="App">
         {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/>}
-        {/* {/* {!this.state.films.length && <p>Loading....</p> } */}
+
         {!this.state.data && <p>Loading....</p> } 
-        {/* {this.state.people.length && <PeopleCardContainer people={this.state.people} />} */}
+
         <Route exact path='/' component={Home} />
         <Route exact path='/people' render={({match})=> {
 

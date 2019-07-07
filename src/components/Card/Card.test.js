@@ -13,7 +13,7 @@ beforeEach(()=> {
     edited: "2014-12-20T21:17:56.891000Z",
     eye_color: "blue",
     favorite: true,
-    films: (5) ["https://swapi.co/api/films/2/", "https://swapi.co/api/films/6/", "https://swapi.co/api/films/3/", "https://swapi.co/api/films/1/", "https://swapi.co/api/films/7/"],
+    films: (5)["https://swapi.co/api/films/2/", "https://swapi.co/api/films/6/", "https://swapi.co/api/films/3/", "https://swapi.co/api/films/1/", "https://swapi.co/api/films/7/"],
     gender: "male",
     hair_color: "blond",
     height: "172",

@@ -44,11 +44,15 @@ class Card extends Component {
   }
 
 
-  
+
+
   render () {
     const {handleFavorite} = this.props;
     const {favorite, name, id} = this.props.item;
     const starType = !favorite ? star : starActive;
+
+    
+
     return (
       <section className="card">
         <h3 className="card-header">{name}</h3>
