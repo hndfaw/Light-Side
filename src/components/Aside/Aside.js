@@ -1,19 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Aside.css'
 
 
-class Aside extends React.Component {
-state = {
-  asideShow: true,
-}
+const Aside = ({asideShow, films, updateAsideShow}) => {
 
-  updateAsideShow = () => {
-    this.setState({asideShow: !this.state.asideShow})
-    this.props.updateAsideShow()
-}
-
-asideStyle = () => {
-  if (this.state.asideShow === true) {
+const asideStyle = () => {
+  if (asideShow === true) {
     return {
       height: '90vh',
       transition: '0.1s',
@@ -35,8 +28,8 @@ asideStyle = () => {
   }
 }
 
-btnStyle = () => {
-  if (this.state.asideShow === true) {
+const btnStyle = () => {
+  if (asideShow === true) {
     return {
       width: '50px'
     }
@@ -51,27 +44,29 @@ btnStyle = () => {
   }
 }
 
-render () {
-  const {films} = this.props;
-  const {asideShow} = this.state;
   const movLength = films.length;
   const randomNumber = Math.floor(Math.random() * Math.floor(movLength));
   const randomFilm = films[randomNumber];
   const closeCrawl = asideShow ? 'Close' : 'Open Opening Crawl';
 
   return (
-    <aside style={this.asideStyle()} className="aside">
+    <aside style={asideStyle()} className="aside">
         <section className="body">
           <p>{randomFilm.opening_crawl}</p>
           <h4 className="film-title">{randomFilm.title}</h4>
           <h4>{randomFilm.release_date}</h4>
         </section>
-        <div style={this.btnStyle()} onClick={this.updateAsideShow} className="minimize-side">{closeCrawl}</div>
+        <div style={btnStyle()} onClick={() => updateAsideShow()} className="minimize-side">{closeCrawl}</div>
       </aside>
       )
-}
+  }
 
-      
+
+
+Aside.propTypes = {
+  films : PropTypes.array,
+  asideShow : PropTypes.bool,
+  updateAsideShow : PropTypes.func
 }
 
 export default Aside;

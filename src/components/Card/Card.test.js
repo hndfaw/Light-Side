@@ -32,7 +32,7 @@ beforeEach(()=> {
 
   it ('should match the snapshot', () => {
     const wrapper = shallow(<Card key={fakeData.id} item={fakeData} handleFavorite={jest.fn()} isFavorited={false} />)
-    expect(wrapper).toMatchSnapshot;
+    expect(wrapper).toMatchSnapshot();
   })
 
   it('should match the favorited snapshot', () => {
@@ -40,11 +40,18 @@ beforeEach(()=> {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it.skip('should run handleFavorite prop when the Favorite button is clicked', () => {
-    const wrapper = shallow(<Card key={fakeData.id} item={fakeData} handleFavorite={jest.fn()} isFavorited={true} />)
-    wrapper.instance().handleFavorite = jest.fn();
+  it('should run handleFavorite prop when the Favorite button is clicked', () => {
+    const handleFavoriteMock = jest.fn();
+    const wrapper = mount(
+    <Card
+    key={fakeData.id}
+    item={fakeData}
+    handleFavorite={handleFavoriteMock}
+     />)
+    
     wrapper.find('.card-fav-btn').simulate('click');
-    expect(wrapper.instance().handleFavorite).toHaveBeenCalledWith('pp-00');
+
+    expect(handleFavoriteMock).toBeCalledWith('pp-0');
   });
 
 });

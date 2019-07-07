@@ -52,4 +52,13 @@ describe('Aside', ()=> {
     expect(wrapper).toMatchSnapshot()
   })
 
+  it('', () => {
+    const updateAsideShowMock = jest.fn();
+    const wrapper = shallow(<Aside updateAsideShow={updateAsideShowMock} films={fakeFilms}/>)
+    
+    wrapper.find('.minimize-side').simulate('click');
+
+    expect(updateAsideShowMock).toBeCalledWith();
+  });
+
 })

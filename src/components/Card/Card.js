@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Card.css';
 import star from '../../images/star.png';
 import starActive from '../../images/star-active.png';
 
 
 class Card extends Component {
-
-  //we should probably change name of this method, it is confusing with the capital I
-
-  items = () => {
+ 
+  
+  generateItems = () => {
     const {item} = this.props;
     if (item.type === 'people') {
 
@@ -43,25 +43,33 @@ class Card extends Component {
     }
   }
 
-  changeFav = (e) => {
-    this.props.handleFavorite(e.target.id)
-  }
+
+  
   render () {
-    const {favorite} = this.props.item
+    const {handleFavorite} = this.props;
+    const {favorite, name, id} = this.props.item;
     const starType = !favorite ? star : starActive;
     return (
       <section className="card">
-        <h3 className="card-header">{this.props.item.name}</h3>
+        <h3 className="card-header">{name}</h3>
         <div className="card-body">
-          {this.Items()}
+          {this.generateItems()}
         </div>
         <footer className="card-footer">
-          <img className="card-fav-btn" src={starType} onClick={this.changeFav} id={this.props.item.id} alt="favorite button"/>
+          <img className="card-fav-btn" src={starType} onClick={() => handleFavorite(id)} alt="favorite button"/>
         </footer>
       </section>
     )
   }
   
+}
+
+Card.propTypes = {
+  item : PropTypes.object,
+  handleFavorite : PropTypes.func,
+  favorite : PropTypes.bool,
+  name : PropTypes.string,
+  id: PropTypes.number
 }
 
 

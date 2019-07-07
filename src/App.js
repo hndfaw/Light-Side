@@ -15,22 +15,12 @@ class App extends Component {
       data: [],
       favCount: 0,
       asideShow: true,
-      // people: [],
-      // planets: [],
-      // vehicles: [],
-      // favorites: data.favorites,
       error: ''
     }
   }
 
-  
   componentDidMount() {
-    // const films =  data.films.results.map((film, i) => {
-    //   film.type = 'films';
-    //   film.id = `fl-${i}`;
-    //   return film;
-    // })
-    
+ 
     const people =  data.people.results.map((person, i) => {
       person.type = 'people';
       person.id = `pp-${i}`;
@@ -61,6 +51,8 @@ class App extends Component {
     //   .then(films => this.setState({ films }))
     //   .catch(error => this.setState({ error : error.message }))
 
+
+    
     
   }
 
@@ -108,7 +100,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow}/>}
+        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/>}
         {/* {/* {!this.state.films.length && <p>Loading....</p> } */}
         {!this.state.data && <p>Loading....</p> } 
         {/* {this.state.people.length && <PeopleCardContainer people={this.state.people} />} */}
