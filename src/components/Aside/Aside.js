@@ -50,9 +50,7 @@ const btnStyle = () => {
   }
   
 }
-
-
-    
+ 
     const movLength = films.length;
     const randomNumber = Math.floor(Math.random() * Math.floor(movLength));
     const randomFilm = films[randomNumber];

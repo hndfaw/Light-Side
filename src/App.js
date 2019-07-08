@@ -4,55 +4,54 @@ import './App.css';
 import Aside from './components/Aside/Aside.js';
 import CardContainer from './components/CardContainer/CardContainer.js'
 import Nav from './components/Nav/Nav.js';
-import Home from './components/Home/Home.js'
-import data from './TestData';
+import Home from './components/Home/Home.js';
+import { fetchFilms, fetchPeople, fetchPlanets, fetchVehicles } from './apiCalls.js';
 
 class App extends Component {
   constructor(){
     super()
     this.state = {
-      films: data.films.results,
+      films: [],
       data: [],
       favCount: 0,
       asideShow: true,
-      error: ''
+      error: '',
     }
   }
+componentDidMount() {
 
-  componentDidMount() {
- 
-    const people =  data.people.results.map((person, i) => {
+fetchFilms().then(films =>
+    this.setState({films: films})
+  )
+
+  fetchPeople().then(people =>
+    people.forEach((person, i) => {
       person.type = 'people';
-      person.id = `pp-${i}`;
+      person.id = `pe-${i}`;
       person.favorite = false;
-      return person;
-    })
+      this.setState({data: [...this.state.data, person]})
 
-    const planets =  data.planets.results.map((planet, i) => {
+    })
+  )
+
+  fetchPlanets().then(planets =>
+    planets.forEach((planet, i) => {
       planet.type = 'planets';
       planet.id = `pl-${i}`;
       planet.favorite = false;
-      return planet;
+      this.setState({data: [...this.state.data, planet]})
     })
+  )
 
-    const vehicles =  data.vehicles.results.map((vehicle, i) => {
+  fetchVehicles().then(vehicles =>
+    vehicles.forEach((vehicle, i) => {
       vehicle.type = 'vehicles';
       vehicle.id = `vh-${i}`;
       vehicle.favorite = false;
-      return vehicle;
+      this.setState({data: [...this.state.data, vehicle]})
     })
-
-    this.setState({ data: [...people, ...planets, ...vehicles] })
-
-    // const filmsURL = 'https://swapi.co/api/films/'
-    // fetch(filmsURL)
-    //   .then(response => response.json())
-    //   .then(data => data.results)
-    //   .then(films => this.setState({ films }))
-    //   .catch(error => this.setState({ error : error.message }))
-
-
-
+  )
+    
   }
 
   handleFavorite = (id) => {
@@ -97,6 +96,7 @@ class App extends Component {
    }
 
   render() {
+    console.log(this.state.data)
     const {films, favCount, data, asideShow} = this.state;
 
     return (
