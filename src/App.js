@@ -21,11 +21,11 @@ class App extends Component {
 componentDidMount() {
 
 fetchFilms().then(films =>
-    this.setState({films: films})
+    this.setState({films: films.results})
   )
 
   fetchPeople().then(people =>
-    people.forEach((person, i) => {
+    people.results.forEach((person, i) => {
       person.type = 'people';
       person.id = `pe-${i}`;
       person.favorite = false;
@@ -35,7 +35,7 @@ fetchFilms().then(films =>
   )
 
   fetchPlanets().then(planets =>
-    planets.forEach((planet, i) => {
+    planets.results.forEach((planet, i) => {
       planet.type = 'planets';
       planet.id = `pl-${i}`;
       planet.favorite = false;
@@ -44,7 +44,7 @@ fetchFilms().then(films =>
   )
 
   fetchVehicles().then(vehicles =>
-    vehicles.forEach((vehicle, i) => {
+    vehicles.results.forEach((vehicle, i) => {
       vehicle.type = 'vehicles';
       vehicle.id = `vh-${i}`;
       vehicle.favorite = false;
@@ -63,13 +63,13 @@ fetchFilms().then(films =>
     });
     this.setState({data: [...items]})
 
-    this.favCounter(items);
+    this.favCounter();
 
   }
 
-  favCounter = (items) => {
+  favCounter = () => {
     let numOfFavorites = 0;
-     items.forEach(i => {
+     this.state.data.forEach(i => {
       if (i.favorite) {
         numOfFavorites++;
       }
@@ -96,7 +96,7 @@ fetchFilms().then(films =>
    }
 
   render() {
-    console.log(this.state.data)
+
     const {films, favCount, data, asideShow} = this.state;
 
     return (

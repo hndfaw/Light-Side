@@ -1,16 +1,13 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import App from './App';
 
 
 describe ('App', ()=> {
   let wrapper;
 
-
   beforeEach(() => {
     wrapper = shallow(<App />);
-     
-
     
   });
 
@@ -57,15 +54,6 @@ it('should match the snapshot', ()=> {
       type: "people",
     }]
 
-     const expected = [{
-      birth_year: "19BBY",
-      favorite: false,
-      gender: "male",
-      id: "pp-0",
-      mass: "77",
-      name: "Luke Skywalker",
-      type: "people",
-    }]
 
     wrapper.instance().setState({data: fakeData})
     wrapper.instance().setState({favCount: 0})
@@ -108,7 +96,7 @@ it('should match the snapshot', ()=> {
 
     wrapper.instance().filterData('people')
 
-    expect(wrapper(filterData).toEqual(expected))
+    expect(wrapper().toEqual(expected))
   })
 
 
