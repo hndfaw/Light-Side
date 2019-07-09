@@ -17,12 +17,13 @@ class App extends Component {
       favCount: 0,
       asideShow: true,
       error: '',
+      randomNum: 0
     }
   }
 componentDidMount() {
 
 fetchFilms().then(films =>
-    this.setState({films: films.results})
+    this.setState({films: films.results}, this.randomNum(films.results.length))
   )
 
   fetchPeople().then(people =>
@@ -52,6 +53,14 @@ fetchFilms().then(films =>
     })
   )
     
+  
+     
+  }
+
+  randomNum = (numFilms) => {
+
+    const randomNum = Math.floor(Math.random() * Math.floor(numFilms))
+    this.setState({ randomNum })
   }
 
   handleFavorite = (id) => {
@@ -97,7 +106,7 @@ fetchFilms().then(films =>
 
   render() {
 
-    const {films, favCount, data, asideShow} = this.state;
+    const {films, favCount, data, asideShow, randomNum} = this.state;
 
     return (
       <div className="App">
@@ -105,7 +114,7 @@ fetchFilms().then(films =>
           <img className="loading" src={loadingImage} alt="loading films"/>
           </div>}
 
-        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/> }
+        {(films.length !== 0) && <Aside randomNum={randomNum} films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/> }
 
         <Route exact path='/' component={Home} />
         <Route exact path='/people' render={({match})=> {
