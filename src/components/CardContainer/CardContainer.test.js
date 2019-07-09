@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import CardContainer from './CardContainer.js'
 
-describe.skip('CardContainer', ()=> {
+describe('CardContainer', ()=> {
 
 it('should match the snapshot with data passed correctly', ()=> {
 
