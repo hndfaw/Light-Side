@@ -19,14 +19,18 @@ Testing using Jest and Enzyme.
 
 
 **Screenshots**
-
+![screenshot-opening](https://github.com/hndfaw/Light-Side/blob/master/src/images/OpeningPageScreenshot.png)
+![screenshot-people]()
+![screenshot-planets]()
+![screenshot-vehicles]()
+![screenshot-favorite]()
 
 **GIF**
 
 ![gif](https://github.com/hndfaw/Light-Side/blob/master/src/images/LiteSideGIF.gif)
 
 
-## To View
+## To View Lite Side
 
 Clone down this repo and in the terminal run: 
 
