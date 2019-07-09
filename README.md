@@ -23,7 +23,7 @@ Testing using Jest and Enzyme.
 
 **GIF**
 
-![gif](
+![gif](https://github.com/hndfaw/Light-Side/blob/master/src/images/LiteSideGIF.gif)
 
 
 ## To View
