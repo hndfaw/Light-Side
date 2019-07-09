@@ -6,16 +6,16 @@ Mod Three Paired Project
 
 **Authors**
 
-Hindreen F. Abdullah
-Anneke McGrady
+Hindreen F. Abdullah [github](https://github.com/hndfaw)
+Anneke McGrady [github}(https://github.com/annekemcgrady)
 
 **Learning Goals**
 
-Lite Side is created in React and implements React Router. 
-Using state and props, PropTypes correctly.
-Learning and using React Lifecycle methods.
-Planning and managing the project effectively using wireframing and a Trello project board.
-Testing using Jest and Enzyme.
+- Lite Side is created in React and implements React Router. 
+- Using state and props, PropTypes correctly.
+- Learning and using React Lifecycle methods.
+- Planning and managing the project effectively using wireframing and a Trello project board.
+ -Testing using Jest and Enzyme.
 
 
 **Screenshots**
