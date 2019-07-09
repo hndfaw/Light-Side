@@ -6,8 +6,8 @@ Mod Three Paired Project
 
 **Authors**
 
-[Hindreen F. Abdullah] (https://github.com/hndfaw)
-[Anneke McGrady] (https://github.com/annekemcgrady)
+[Hindreen F. Abdullah](https://github.com/hndfaw)
+[Anneke McGrady](https://github.com/annekemcgrady)
 
 **Learning Goals**
 
