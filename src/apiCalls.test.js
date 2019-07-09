@@ -23,7 +23,7 @@ describe('fetchFilms', () => {
     expect(window.fetch).toHaveBeenCalledWith(...expected)
   })
 
-  it('fetchFilms should return a parsed response is status if ok', async () =>{
+  it('fetchFilms should return a parsed response if status is ok', async () =>{
     const result = await fetchFilms();
     fetchFilms()
     expect(result).toEqual(mockFilmsResponse)
