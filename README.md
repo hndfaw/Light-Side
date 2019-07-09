@@ -20,7 +20,7 @@ Testing using Jest and Enzyme.
 
 **Screenshots**
 ![screenshot-opening](https://github.com/hndfaw/Light-Side/blob/master/src/images/OpeningPageScreenshot.png)
-![screenshot-people]()
+![screenshot-people](https://github.com/hndfaw/Light-Side/blob/master/src/images/PeopleScreenshot.png)
 ![screenshot-planets]()
 ![screenshot-vehicles]()
 ![screenshot-favorite]()
