@@ -4,6 +4,15 @@ exports[`App should match the snapshot 1`] = `
 <div
   className="App"
 >
+  <div
+    className="loading-container"
+  >
+    <img
+      alt="loading films"
+      className="loading"
+      src="loading-y.gif"
+    />
+  </div>
   <Route
     component={[Function]}
     exact={true}
