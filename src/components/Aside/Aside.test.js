@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Aside from './Aside.js';
 
 describe('Aside', ()=> {
@@ -52,7 +52,7 @@ describe('Aside', ()=> {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('', () => {
+  it('should call updateAside when button is clicked', () => {
     const updateAsideShowMock = jest.fn();
     const wrapper = shallow(<Aside updateAsideShow={updateAsideShowMock} films={fakeFilms}/>)
     

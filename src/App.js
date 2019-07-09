@@ -7,6 +7,7 @@ import Nav from './components/Nav/Nav.js';
 import Home from './components/Home/Home.js';
 import { fetchFilms, fetchPeople, fetchPlanets, fetchVehicles } from './apiCalls.js';
 
+
 class App extends Component {
   constructor(){
     super()
@@ -22,7 +23,7 @@ componentDidMount() {
 
 fetchFilms().then(films =>
     this.setState({films: films.results})
-  )
+  ).catch(error => this.setState({error: error}))
 
   fetchPeople().then(people =>
     people.results.forEach((person, i) => {
@@ -31,7 +32,7 @@ fetchFilms().then(films =>
       person.favorite = false;
       this.setState({data: [...this.state.data, person]})
     })
-  )
+  ).catch(error => this.setState({error: error}))
 
   fetchPlanets().then(planets =>
     planets.results.forEach((planet, i) => {
@@ -40,7 +41,7 @@ fetchFilms().then(films =>
       planet.favorite = false;
       this.setState({data: [...this.state.data, planet]})
     })
-  )
+  ).catch(error => this.setState({error: error}))
 
   fetchVehicles().then(vehicles =>
     vehicles.results.forEach((vehicle, i) => {
@@ -49,7 +50,7 @@ fetchFilms().then(films =>
       vehicle.favorite = false;
       this.setState({data: [...this.state.data, vehicle]})
     })
-  )
+  ).catch(error => this.setState({error: error}))
     
   }
 
@@ -96,14 +97,14 @@ fetchFilms().then(films =>
 
   render() {
 
-    const {films, favCount, data, asideShow} = this.state;
+    const {films, favCount, data, asideShow, error} = this.state;
 
     return (
       <div className="App">
         {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/>}
-
-        {!this.state.data && <p>Loading....</p> } 
-
+        
+        { error && <p>{error}</p> }
+        
         <Route exact path='/' component={Home} />
         <Route exact path='/people' render={({match})=> {
 
