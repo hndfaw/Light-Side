@@ -6,6 +6,7 @@ import CardContainer from './components/CardContainer/CardContainer.js'
 import Nav from './components/Nav/Nav.js';
 import Home from './components/Home/Home.js';
 import { fetchFilms, fetchPeople, fetchPlanets, fetchVehicles } from './apiCalls.js';
+import loadingImage from './images/loading-y.gif'
 
 class App extends Component {
   constructor(){
@@ -100,9 +101,11 @@ fetchFilms().then(films =>
 
     return (
       <div className="App">
-        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/>}
+        {((films.length === 0) || (data.length === 0)) && <div className="loading-container">
+          <img className="loading" src={loadingImage} alt="loading films"/>
+          </div>}
 
-        {!this.state.data && <p>Loading....</p> } 
+        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/> }
 
         <Route exact path='/' component={Home} />
         <Route exact path='/people' render={({match})=> {
@@ -121,6 +124,8 @@ fetchFilms().then(films =>
         return (data.length !== 0) && <CardContainer  handleFavorite={this.handleFavorite} data={this.filterData('favorite')} favCount={favCount} path={match.path} updateCurrentPath={this.updateCurrentPath} asideShow={asideShow}/> }} />
 
         <Nav favCount={favCount}/>
+
+        
       </div>
     );
   }
