@@ -18,13 +18,16 @@ class App extends Component {
       favCount: 0,
       asideShow: true,
       error: '',
+      randomNum: 0
     }
   }
 componentDidMount() {
 
 fetchFilms().then(films =>
-    this.setState({films: films.results})
+
+    this.setState({films: films.results}, this.randomNum(films.results.length))
   ).catch(error => this.setState({error: error}))
+
 
   fetchPeople().then(people =>
     people.results.forEach((person, i) => {
@@ -53,6 +56,14 @@ fetchFilms().then(films =>
     })
   ).catch(error => this.setState({error: error}))
     
+  
+     
+  }
+
+  randomNum = (numFilms) => {
+
+    const randomNum = Math.floor(Math.random() * Math.floor(numFilms))
+    this.setState({ randomNum })
   }
 
   handleFavorite = (id) => {
@@ -98,7 +109,9 @@ fetchFilms().then(films =>
 
   render() {
 
-    const {films, favCount, data, asideShow, error} = this.state;
+
+    const {films, favCount, data, asideShow, randomNum, error} = this.state;
+
 
     return (
       <div className="App">
@@ -107,7 +120,7 @@ fetchFilms().then(films =>
           <img className="loading" src={loadingImage} alt="loading films"/>
           </div>}
 
-        {(films.length !== 0) && <Aside films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/> }
+        {(films.length !== 0) && <Aside randomNum={randomNum} films={films} updateAsideShow={this.updateAsideShow} asideShow={asideShow}/> }
 
         { error && <p>{error}</p> }
         

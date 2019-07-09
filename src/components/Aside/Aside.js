@@ -5,7 +5,7 @@ import './Aside.css'
 
 
 
-const Aside = ({asideShow, films, updateAsideShow}) => {
+const Aside = ({asideShow, films, updateAsideShow, randomNum}) => {
 
 const asideStyle = () => {
   if (asideShow === true) {
@@ -51,11 +51,7 @@ const btnStyle = () => {
   
 }
  
-    const movLength = films.length;
-    const randomNumber = Math.floor(Math.random() * Math.floor(movLength));
-    const randomFilm = films[randomNumber];
-  
-  
+  const randomFilm = films[randomNum];
 
   const closeCrawl = asideShow ? 'Close' : 'Open Opening Crawl';
 
