@@ -96,7 +96,7 @@ it('should match the snapshot', ()=> {
 
     wrapper.instance().filterData('people')
 
-    expect(wrapper().toEqual(expected))
+    expect(wrapper).toEqual(expected)
   })
 
 

@@ -30,7 +30,6 @@ fetchFilms().then(films =>
       person.id = `pe-${i}`;
       person.favorite = false;
       this.setState({data: [...this.state.data, person]})
-
     })
   )
 
