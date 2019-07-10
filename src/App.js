@@ -25,10 +25,13 @@ componentDidMount() {
 
 fetchFilms().then(films =>
 
+
     this.setState({films: films.results}, this.randomNum(films.results.length))
   ).catch(error => this.setState({error: error}))
 
 
+
+  
   fetchPeople().then(people =>
     people.results.forEach((person, i) => {
       person.type = 'people';
