@@ -6,7 +6,7 @@ import CardContainer from './components/CardContainer/CardContainer.js'
 import Nav from './components/Nav/Nav.js';
 import Home from './components/Home/Home.js';
 import { fetchFilms, fetchPeople, fetchPlanets, fetchVehicles } from './apiCalls.js';
-import loadingImage from './images/loading-y.gif'
+import loadingImage from './images/light-side-loading.gif'
 
 
 class App extends Component {
