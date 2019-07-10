@@ -25,8 +25,11 @@ componentDidMount() {
 
 fetchFilms().then(films =>
 
-  this.setState({films: films.results}, this.randomNum(films.results.length))
+
+    this.setState({films: films.results}, this.randomNum(films.results.length))
   ).catch(error => this.setState({error: error}))
+
+
 
   
   fetchPeople().then(people =>
@@ -109,7 +112,9 @@ fetchFilms().then(films =>
 
   render() {
 
+
     const {films, favCount, data, asideShow, randomNum, error} = this.state;
+
 
     return (
       <div className="App">
