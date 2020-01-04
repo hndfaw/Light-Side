@@ -10,7 +10,7 @@ exports[`App should match the snapshot 1`] = `
     <img
       alt="loading films"
       className="loading"
-      src="loading-y.gif"
+      src="light-side-loading.gif"
     />
   </div>
   <Route

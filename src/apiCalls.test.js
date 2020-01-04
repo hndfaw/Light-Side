@@ -1,4 +1,3 @@
-
 import  { fetchFilms, fetchPeople, fetchPlanets, fetchVehicles } from './apiCalls';
 
 describe('fetchFilms', () => {
